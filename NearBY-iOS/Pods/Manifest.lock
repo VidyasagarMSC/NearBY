@@ -1,0 +1,33 @@
+PODS:
+  - Alamofire (4.2.0)
+  - BMSAnalytics (2.2.0):
+    - BMSCore (~> 2.1)
+  - BMSAnalyticsAPI (2.2.0)
+  - BMSCore (2.3.1):
+    - BMSAnalyticsAPI (~> 2.2)
+  - GoogleMaps/Base (2.1.1)
+  - GooglePlaces (2.1.1):
+    - GoogleMaps/Base (= 2.1.1)
+  - JSQMessagesViewController (7.3.4):
+    - JSQSystemSoundPlayer (~> 2.0.1)
+  - JSQSystemSoundPlayer (2.0.1)
+
+DEPENDENCIES:
+  - Alamofire (= 4.2.0)
+  - BMSAnalytics
+  - GooglePlaces (= 2.1.1)
+  - JSQMessagesViewController (= 7.3.4)
+
+SPEC CHECKSUMS:
+  Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  BMSAnalytics: 58ceebea7d929db5811b9e3c51282480b39622c2
+  BMSAnalyticsAPI: 2dae02bc3321b944ae947a7d2f0f009d8035f8e7
+  BMSCore: 59a1a6769d398f55b8bd83be647e084812b924e0
+  GoogleMaps: a5b5bbe47734e2443bde781a6aa64e69fdb6d785
+  GooglePlaces: 35636d86e5020cba3856eb988c09a5491de0a65a
+  JSQMessagesViewController: 39fed975e3c9f8eba7292071e29eeb541d105e66
+  JSQSystemSoundPlayer: c5850e77a4363ffd374cd851154b9af93264ed8d
+
+PODFILE CHECKSUM: 8c7d3a3b97d5a8c58dcab8b3e98b5a023babc166
+
+COCOAPODS: 1.1.1

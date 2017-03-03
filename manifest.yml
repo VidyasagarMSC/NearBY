@@ -1,0 +1,28 @@
+---
+declared-services:
+  CognitiveConcierge-Conversation:
+    label: conversation
+    plan: free
+  CognitiveConcierge-Speech-To-Text:
+    label: speech_to_text
+    plan: standard
+  CognitiveConcierge-Text-To-Speech:
+    label: text_to_speech
+    plan: standard
+  CognitiveConcierge-Alchemy:
+    label: alchemy_api
+    plan: free
+applications:
+- name: CognitiveConcierge-IC17
+  host: CognitiveConcierge-IC17
+  path: ./CognitiveConcierge-Server
+  random-route: true
+  command: restaurant-recommendations -bind 0.0.0.0:$PORT
+  memory: 512M
+  disk_quota: 1024M
+  instances: 1
+  buildpack: swift_buildpack
+  services:
+  - CognitiveConcierge-Conversation
+  - CognitiveConcierge-Speech-To-Text
+  - CognitiveConcierge-Text-To-Speech
