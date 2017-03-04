@@ -17,6 +17,7 @@
 import UIKit
 import Alamofire
 import GooglePlaces
+import BMSCore
 
 class EndpointManager: NSObject {
     
@@ -53,6 +54,22 @@ class EndpointManager: NSObject {
     func requestRecommendations(endpoint: String, type:String, longitude:String, latitude:String, failure: @escaping ([Restaurant]) -> Void, success: @escaping ([Any]) -> Void) {
         let url = getBaseRequestURL() + "/api/v1/" + type + "?occasion=" + endpoint + "&longitude=" + longitude + "&latitude=" + latitude
         print("URL" + url)
+        
+        // Make a network request
+        let customResourceURL = url
+        let request = Request(url: customResourceURL)
+        
+        //Request(callBack(url: customResourceURL, method: HTTPMethod.get)
+        
+        let callBack:BMSCompletionHandler = {(response: Response?, error: Error?) in
+            if error == nil {
+                print ("response:\(response?.responseText), no error")
+            } else {
+                print ("error: \(error)")
+            }
+        }
+        request.send(completionHandler: callBack)
+
         
         // Execute REST request to get all restaurant recommendations from API
         Alamofire.request(url, encoding: JSONEncoding.default).responseJSON { response in

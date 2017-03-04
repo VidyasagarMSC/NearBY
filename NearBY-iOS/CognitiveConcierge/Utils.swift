@@ -19,7 +19,7 @@ import UIKit
 import Foundation
 
 class Utils {
-    static let kNavigationBarTitle: String = "CONCIERGE CHAT"
+    static let kNavigationBarTitle: String = "NearBY CHAT"
 
     class func setNavigationItems(viewController: UIViewController, rightButtons: [UIBarButtonItem], leftButtons: [UIBarButtonItem]) {
         viewController.navigationController!.navigationItem.hidesBackButton = true

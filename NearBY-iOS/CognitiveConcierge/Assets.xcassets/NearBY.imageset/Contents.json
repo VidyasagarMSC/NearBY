@@ -4,6 +4,14 @@
       "idiom" : "universal",
       "filename" : "Screen Shot 2017-03-03 at 9.21.20 PM.png",
       "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
     }
   ],
   "info" : {

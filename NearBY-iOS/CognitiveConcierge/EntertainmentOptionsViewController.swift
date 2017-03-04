@@ -35,7 +35,7 @@ class EntertainmentOptionsViewController: UIViewController {
     private var convoService: Conversation!
     private var workspaceID: String?
     
-    private let kNavigationBarTitle = "Watson Recommendations"
+    private let kNavigationBarTitle = "NearBY Recommendations"
     fileprivate let kCellCount = 3
     private let kLabelText = "WHAT CAN I HELP YOU FIND?"
     fileprivate let kRestaurantLabelText = "RESTAURANTS"

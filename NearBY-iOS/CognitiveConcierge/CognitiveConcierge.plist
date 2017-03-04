@@ -20,5 +20,7 @@
 	<string>b711649b-3a0d-4b37-b15b-3f500e1844ad</string>
 	<key>SpeechToTextPassword</key>
 	<string>AwLHA4vG1zpL</string>
+	<key>BluemixMobileAnalytics</key>
+	<string>5bc78043-759d-4e52-9355-861b406bdaef</string>
 </dict>
 </plist>

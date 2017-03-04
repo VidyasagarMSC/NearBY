@@ -26,36 +26,46 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //Initialization - Bluemix Mobile Analytics
-        BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth)
-        Analytics.initialize(appName: "Cognitive Concierge", apiKey: "5bc78043-759d-4e52-9355-861b406bdaef", hasUserContext: false, deviceEvents: .lifecycle, .network)
-        
-        Analytics.isEnabled = true
-        Analytics.userIdentity="VMac"
-        Logger.isLogStorageEnabled = true
-        Logger.isInternalDebugLoggingEnabled = true
-        Logger.logLevelFilter = LogLevel.debug
-        let logger = Logger.logger(name: "My Logger")
-        logger.debug(message: "Just logging to test")
-        Logger.send(completionHandler: { (response: Response?, error: Error?) in
-            if let response = response {
-                print("Status code: \(response.statusCode)")
-                print("Response: \(response.responseText)")
-            }
-            if let error = error {
-                logger.error(message: "Failed to send logs. Error: \(error)")
-            }
-        })
-        
-        Analytics.send(completionHandler: { (response: Response?, error: Error?) in
-            if let response = response {
-                print("Status code: \(response.statusCode)")
-                print("Response: \(response.responseText)")
-            }
-            if let error = error {
-                logger.error(message: "Failed to send analytics. Error: \(error)")
-            }
-        })
+        if let configurationPath = Bundle.main.path(forResource: "CognitiveConcierge", ofType: "plist")
+        {
+            let configuration = NSDictionary(contentsOfFile: configurationPath)
+            
+            //Initialization - Bluemix Mobile Analytics
+            BMSClient.sharedInstance.initialize(bluemixRegion: BMSClient.Region.usSouth)
+            Analytics.initialize(appName: "NearBY", apiKey: configuration?["BluemixMobileAnalytics"] as! String, hasUserContext: false, deviceEvents: .lifecycle, .network)
+            
+            Analytics.isEnabled = true
+            Analytics.userIdentity="VMac"
+            Logger.isLogStorageEnabled = true
+            Logger.isInternalDebugLoggingEnabled = true
+            Logger.logLevelFilter = LogLevel.debug
+            let logger = Logger.logger(name: "My Logger")
+            logger.debug(message: "Logging from AppDelegate.Swift")
+            Logger.send(completionHandler: { (response: Response?, error: Error?) in
+                if let response = response {
+                    print("Status code: \(response.statusCode)")
+                    print("Response: \(response.responseText)")
+                }
+                if let error = error {
+                    logger.error(message: "Failed to send logs. Error: \(error)")
+                }
+            })
+            
+            Analytics.send(completionHandler: { (response: Response?, error: Error?) in
+                if let response = response {
+                    print("Status code: \(response.statusCode)")
+                    print("Response: \(response.responseText)")
+                }
+                if let error = error {
+                    logger.error(message: "Failed to send analytics. Error: \(error)")
+                }
+            })
+
+        }
+        else {
+            print("problem loading configuration file CognitiveConcierge.plist")
+            return false
+        }
         return true
     }
     
