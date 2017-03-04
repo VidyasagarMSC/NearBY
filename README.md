@@ -1,9 +1,9 @@
 # NearBY - An iOS travel Advisor app Powered by IBM Bluemix (Mobile Services, Watson, Kitura)
 
-NearBY is an adoption and extension to [CognitiveConcierge](https://github.com/VidyasagarMSC/CognitiveConcierge).
+NearBY is an adoption and extension to [CognitiveConcierge](https://github.com/IBM-MIL/CognitiveConcierge).
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end.  
 
-## Enhancements on top of CognitiveConcierge
+## Enhancements 
 
 - Auto detection of Location using CLLocationManager.
 - Bluemix Mobile Analytics.
