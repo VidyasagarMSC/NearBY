@@ -17,11 +17,23 @@
 import UIKit
 import BMSCore
 import BMSAnalytics
+import BMSPush
+import CoreLocation
+import OpenWhisk
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate {
     
     var window: UIWindow?
+    
+    var pushAppGUID:String = "2913bfe5-a3fc-4401-93ba-0fada156dda0"
+    var pushAppClientSecret:String = "afab35fd-d588-4fd5-8ba7-786b61844629"
+    var pushAppSecret:String = "afab35fd-d588-4fd5-8ba7-786b61844629"
+    var pushAppRegion:String = ".ng.bluemix.net"
+    var whiskAccessKey:String = "9908ebc9-7385-4460-b5d9-eb88541a76e3"
+    var whiskaccessToken:String = "DkNWqzA6e1c6of2pLTZdjE5EShRgheXtbfx0hQWjZfhXWnDCCfdqFuP1R7z9k9fb"
+    var whiskActionName:String = "SendLocationUpdate"
+    var whiskSpaceName:String = "IMF_Push_kgspace"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -60,6 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                     logger.error(message: "Failed to send analytics. Error: \(error)")
                 }
             })
+            
+            startSignificantChangeLocationUpdates()
 
         }
         else {
@@ -69,28 +83,132 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        
+        BMSPushClient.sharedInstance.registerWithDeviceToken(deviceToken: deviceToken) { (response, statusCode, error) in
+            
+            if error.isEmpty {
+                
+                print( "Response during device registration : \(response)")
+                
+                print( "status code during device registration : \(statusCode)")
+            }else{
+                print( "Error during device registration \(error) ")
+                
+            }
+        }
     }
     
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("Error registering for push notifications: \(error.localizedDescription)")
+    }
+    
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+        let payLoad = ((((userInfo as NSDictionary).value(forKey: "aps") as! NSDictionary).value(forKey: "alert") as! NSDictionary).value(forKey: "body") as! NSString)
+        
+        self.showAlert(title: "Recieved Push notifications", message: payLoad as String)
+        let push =  BMSPushClient.sharedInstance
+        
+        let respJson = (userInfo as NSDictionary).value(forKey: "payload") as! String
+        let data = respJson.data(using: String.Encoding.utf8)
+        
+        let jsonResponse:NSDictionary = try! JSONSerialization.jsonObject(with: data! , options: JSONSerialization.ReadingOptions.allowFragments) as! NSDictionary
+        
+        let messageId:String = jsonResponse.value(forKey: "nid") as! String
+        push.sendMessageDeliveryStatus(messageId: messageId) { (res, ss, ee) in
+            completionHandler(UIBackgroundFetchResult.newData)
+        }
+        
+    }
+    
+    func showAlert (title:String , message:String){
+        
+        // create the alert
+        let alert = UIAlertController.init(title: title , message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        // add an action (button)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: nil))
+        
+        // show the alert
+        self.window!.rootViewController!.present(alert, animated: true, completion: nil)
+    }
+    
+    //MARK: LOCATION UPDATES
+    func startSignificantChangeLocationUpdates() {
+        // Create a location manager object
+        self.locationManager = CLLocationManager()
+        
+        // Set the delegate
+        self.locationManager.delegate = self
+        self.locationManager.desiredAccuracy = kCLLocationAccuracyBest
+        self.locationManager.distanceFilter = 1000.00
+        self.locationManager.activityType = CLActivityType.automotiveNavigation
+        
+        // Request location authorization
+        self.locationManager.requestAlwaysAuthorization()
+        
+        // Start significant-change location updates
+        self.locationManager.startMonitoringSignificantLocationChanges()
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        
+        let geoCoder = CLGeocoder()
+        geoCoder.reverseGeocodeLocation(locations.last!) { (placemarks, error) in
+            if error != nil {
+                print("Reverse geocoder failed with error" + (error?.localizedDescription)!)
+                return
+            }
+            if (placemarks!.count) > 0 {
+                let pm = (placemarks?[0])! as CLPlacemark
+                print(pm.locality)
+                
+                let credentialsConfiguration = WhiskCredentials(accessKey:self.whiskAccessKey, accessToken: self.whiskaccessToken)
+                
+                let whisk = Whisk(credentials: credentialsConfiguration)
+                whisk.verboseReplies = true
+                
+                var devId = String()
+                let authManager  = BMSClient.sharedInstance.authorizationManager
+                devId = authManager.deviceIdentity.ID!;
+                
+                var params = Dictionary<String, String>()
+                params["location"] = pm.locality!
+                params["deviceIds"] = devId
+                params["appID"] = self.pushAppGUID
+                params["appSecret"] = self.pushAppSecret
+                
+                do {
+                    try whisk.invokeAction(name: self.whiskActionName, package: "", namespace: self.whiskSpaceName, parameters: params as AnyObject?, hasResult: true, callback: {(reply, error) -> Void in
+                        
+                        if let error = error {
+                            //do something
+                            print("Error invoking action \(error.localizedDescription)")
+                            
+                        } else {
+                            print("Success")
+                        }
+                        
+                    })
+                } catch {
+                    print("Error \(error)")
+                }
+            }
+            else {
+                print("Problem with the data received from geocoder")
+            }
+        }
+        
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        self.locationManager.stopMonitoringSignificantLocationChanges()
+        
     }
-    
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        self.locationManager.startMonitoringSignificantLocationChanges()
     }
-    
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-    }
-    
+
     
 }
 
