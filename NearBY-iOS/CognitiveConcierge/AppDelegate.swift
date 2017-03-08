@@ -35,6 +35,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     var whiskActionName:String = "SendLocationUpdate"
     var whiskSpaceName:String = "IMF_Push_kgspace"
     
+    var locationManager = CLLocationManager()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
