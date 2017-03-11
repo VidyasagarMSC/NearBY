@@ -94,9 +94,16 @@ class EntertainmentOptionsViewController: UIViewController {
         self.navigationController?.isNavigationBarHidden = false
         Utils.setNavigationItems(viewController: self, rightButtons: [MoreIconBarButtonItem()], leftButtons: [ProfileBarButtonItem()])
         Utils.setupNavigationTitleLabel(viewController: self, title: kNavigationBarTitle, spacing: 1.0, titleFontSize: 17, color: UIColor.white)
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(EntertainmentOptionsViewController.Login), name: NSNotification.Name(rawValue: "sendFeedLogin"), object: nil)
+
 
     }
     
+    func Login() {
+        
+        performSegue(withIdentifier: "loginVCSS", sender: self)
+    }
     override func viewWillDisappear(_ animated: Bool) {
         self.navigationController?.isNavigationBarHidden = true
     }

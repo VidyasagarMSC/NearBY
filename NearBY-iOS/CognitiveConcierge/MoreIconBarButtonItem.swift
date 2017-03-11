@@ -30,16 +30,14 @@ class MoreIconBarButtonItem: UIBarButtonItem {
         setupMoreIconButton()
     }
     
-    //    func goToMore() {
-    //        if let currentVC = getCurrentViewController() {
-    //            currentVC.presentViewController(ConfigurationViewController(), animated: true, completion: nil)
-    //        }
-    //    }
+       func goToMore() {
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: "sendFeedLogin"), object:nil)
+       }
     
     private func getMoreIconButton() -> UIButton {
         let moreIconButton = UIButton()
         moreIconButton.setImage(UIImage(named: "moreIcon"), for: .normal)
-        //        moreIconButton.addTarget(self, action: #selector(MoreIconBarButtonItem.goToMore), forControlEvents: .TouchUpInside)
+        moreIconButton.addTarget(self, action: #selector(MoreIconBarButtonItem.goToMore), for: .touchUpInside)
         moreIconButton.frame = CGRect(x: 343, y: 43.5, width: 16, height: 4)
         moreIconButton.tintColor = UIColor.customGetMoreIconButtonColor()
         return moreIconButton
