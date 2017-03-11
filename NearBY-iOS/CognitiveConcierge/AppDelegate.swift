@@ -76,6 +76,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
             })
             
             startSignificantChangeLocationUpdates()
+            _ = MyChallengeHandler();
 
         }
         else {

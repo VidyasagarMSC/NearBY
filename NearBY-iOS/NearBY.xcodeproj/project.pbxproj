@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		140E2CA41E73EBFE006829F7 /* MFP.png in Resources */ = {isa = PBXBuildFile; fileRef = 140E2CA31E73EBFE006829F7 /* MFP.png */; };
+		140E2CA61E73ED53006829F7 /* MyChallengeHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E2CA51E73ED53006829F7 /* MyChallengeHandler.swift */; };
+		140E2CA81E73EEBE006829F7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 140E2CA71E73EEBE006829F7 /* LoginViewController.swift */; };
+		140E2CAA1E73EF85006829F7 /* mfpclient.plist in Resources */ = {isa = PBXBuildFile; fileRef = 140E2CA91E73EF85006829F7 /* mfpclient.plist */; };
 		457AFF61080EB290F55922AE /* Pods_NearBY.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 682C5EDCF2ABC60E0814E69A /* Pods_NearBY.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		7ADBC9D51DDD591000837023 /* ConversationV1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D11DDD591000837023 /* ConversationV1.framework */; };
 		7ADBC9D61DDD591000837023 /* RestKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7ADBC9D21DDD591000837023 /* RestKit.framework */; };
@@ -61,6 +65,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		140E2CA31E73EBFE006829F7 /* MFP.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MFP.png; sourceTree = "<group>"; };
+		140E2CA51E73ED53006829F7 /* MyChallengeHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyChallengeHandler.swift; sourceTree = "<group>"; };
+		140E2CA71E73EEBE006829F7 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		140E2CA91E73EF85006829F7 /* mfpclient.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = mfpclient.plist; sourceTree = "<group>"; };
 		45B028E75890E618B43A2877 /* Pods-NearBY.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearBY.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NearBY/Pods-NearBY.debug.xcconfig"; sourceTree = "<group>"; };
 		63D659693875A4DFDDFD2227 /* Pods-NearBY.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NearBY.release.xcconfig"; path = "Pods/Target Support Files/Pods-NearBY/Pods-NearBY.release.xcconfig"; sourceTree = "<group>"; };
 		682C5EDCF2ABC60E0814E69A /* Pods_NearBY.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NearBY.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +143,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		140E2CA21E73EBEF006829F7 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				140E2CA91E73EF85006829F7 /* mfpclient.plist */,
+				140E2CA31E73EBFE006829F7 /* MFP.png */,
+				140E2CA51E73ED53006829F7 /* MyChallengeHandler.swift */,
+				140E2CA71E73EEBE006829F7 /* LoginViewController.swift */,
+			);
+			name = Login;
+			sourceTree = "<group>";
+		};
 		7F6FAE7A1D6B4A0A00BE7829 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +252,7 @@
 		7FA7F88E1D60CEA70039792A /* NearBY */ = {
 			isa = PBXGroup;
 			children = (
+				140E2CA21E73EBEF006829F7 /* Login */,
 				CE1C1B671D79C45A00F1C4D2 /* Navigation */,
 				CE1C1B661D79C30700F1C4D2 /* Utils */,
 				CED9E29C1D749C5C00AADF4D /* DataManagers */,
@@ -386,8 +406,8 @@
 				TargetAttributes = {
 					7FA7F88B1D60CEA70039792A = {
 						CreatedOnToolsVersion = 7.3.1;
-						DevelopmentTeam = H96JYAMVU2;
 						LastSwiftMigration = 0800;
+						ProvisioningStyle = Manual;
 					};
 				};
 			};
@@ -417,6 +437,7 @@
 				CE68A5BA1D89E57F00CC0E4E /* SFNSDisplay-Bold.ttf in Resources */,
 				CE72A1221DA30C9900D6552E /* birthday.json in Resources */,
 				CE79F3831D8304DE00550967 /* Watson-blue.gif in Resources */,
+				140E2CAA1E73EF85006829F7 /* mfpclient.plist in Resources */,
 				972AB5631DA5E6F600985506 /* bluemix.plist in Resources */,
 				7F9F77431D64CB5F00B9114B /* reviews.txt in Resources */,
 				CE1C1B721D79E40F00F1C4D2 /* SFNSDisplay.ttf in Resources */,
@@ -426,6 +447,7 @@
 				7FA7F8971D60CEA70039792A /* Assets.xcassets in Resources */,
 				7FEAA4311D835AB300E4839C /* WatsonOverlay.xib in Resources */,
 				7F9F774A1D664D2500B9114B /* RecommendedRestaurantTableViewCell.xib in Resources */,
+				140E2CA41E73EBFE006829F7 /* MFP.png in Resources */,
 				CE72A1241DA30C9E00D6552E /* casual.json in Resources */,
 				CE72A11E1DA2AF7700D6552E /* LasVegasReviews.json in Resources */,
 				CE72A1201DA30C9200D6552E /* anniversary.json in Resources */,
@@ -509,6 +531,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				140E2CA81E73EEBE006829F7 /* LoginViewController.swift in Sources */,
 				CE1C1B6F1D79C5ED00F1C4D2 /* MoreIconBarButtonItem.swift in Sources */,
 				972AB5611DA5E17900985506 /* BluemixConfiguration.swift in Sources */,
 				CE79F37D1D81161800550967 /* WhitePathIconBarButtonItem.swift in Sources */,
@@ -530,6 +553,7 @@
 				7FA7F8901D60CEA70039792A /* AppDelegate.swift in Sources */,
 				CED9E2A01D74BCF000AADF4D /* EndpointManager.swift in Sources */,
 				CE58188B1D74828D006D3D43 /* EntertainmentOptionsViewController.swift in Sources */,
+				140E2CA61E73ED53006829F7 /* MyChallengeHandler.swift in Sources */,
 				7F9F774C1D664D4B00B9114B /* RecommendedRestaurantTableViewCell.swift in Sources */,
 				CE1C1B711D79C6C300F1C4D2 /* ProfileBarButtonItem.swift in Sources */,
 				7F9F77561D6655B100B9114B /* UIFontExtension.swift in Sources */,
@@ -661,7 +685,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H96JYAMVU2;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -687,7 +711,7 @@
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = H96JYAMVU2;
+				DEVELOPMENT_TEAM = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",

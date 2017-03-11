@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1108" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ugx-Y1-r44">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ugx-Y1-r44">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -31,15 +31,135 @@
             </objects>
             <point key="canvasLocation" x="-445" y="762"/>
         </scene>
+        <!--Login View Controller-->
+        <scene sceneID="8A4-gu-Fi6">
+            <objects>
+                <viewController id="yC1-B8-4LT" customClass="LoginViewController" customModule="NearBY" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="E0P-pn-NHO"/>
+                        <viewControllerLayoutGuide type="bottom" id="bpF-ad-1n5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Fml-5c-4k6">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SGC-Hz-x3D">
+                                <rect key="frame" x="60" y="260" width="255" height="30"/>
+                                <color key="backgroundColor" red="0.95605639180000002" green="0.95605639180000002" blue="0.95605639180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="mBe-8D-H9v"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yC1-B8-4LT" id="3f8-gy-H4D"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="abz-rA-6H2">
+                                <rect key="frame" x="60" y="309" width="255" height="30"/>
+                                <color key="backgroundColor" red="0.95605639180000002" green="0.95605639180000002" blue="0.95605639180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="uqE-Ez-QaV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="yC1-B8-4LT" id="CSM-qL-H4Q"/>
+                                </connections>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ou5-yq-SXL">
+                                <rect key="frame" x="60" y="376" width="255" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Pbd-bf-Ij8"/>
+                                    <constraint firstAttribute="width" constant="255" id="Vde-44-673"/>
+                                </constraints>
+                                <state key="normal" title="Sign In ">
+                                    <color key="titleColor" red="0.95605639180000002" green="0.95605639180000002" blue="0.95605639180000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="signIn:" destination="yC1-B8-4LT" eventType="touchUpInside" id="y6o-f5-arl"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Powered by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3nD-0a-aeX">
+                                <rect key="frame" x="142" y="414" width="90" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="7KZ-xe-I5G"/>
+                                    <constraint firstAttribute="width" constant="90" id="qvO-hr-Ld1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.73725490199999999" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="MFP.png" translatesAutoresizingMaskIntoConstraints="NO" id="iHV-fe-q81">
+                                <rect key="frame" x="156" y="443" width="63" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="63" id="3B2-11-uJB"/>
+                                    <constraint firstAttribute="height" constant="37" id="tyW-bG-0dG"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NearBY" translatesAutoresizingMaskIntoConstraints="NO" id="OSI-sc-2sF">
+                                <rect key="frame" x="67" y="112" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="128" id="EOO-Uy-S6S"/>
+                                    <constraint firstAttribute="width" constant="240" id="lne-nu-FdI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OuI-9x-G8e">
+                                <rect key="frame" x="16" y="347" width="343" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="ifw-VC-8hG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="0.11791246959942026" blue="0.14247004073038705" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="SGC-Hz-x3D" firstAttribute="leading" secondItem="Fml-5c-4k6" secondAttribute="leadingMargin" constant="44" id="5XJ-WC-t23"/>
+                            <constraint firstItem="SGC-Hz-x3D" firstAttribute="centerY" secondItem="Fml-5c-4k6" secondAttribute="centerY" constant="-58.5" id="7Lk-ZP-y7r"/>
+                            <constraint firstItem="iHV-fe-q81" firstAttribute="top" secondItem="3nD-0a-aeX" secondAttribute="bottom" constant="8" id="GgA-U7-uJK"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="SGC-Hz-x3D" secondAttribute="trailing" constant="44" id="Lrp-Bt-XDQ"/>
+                            <constraint firstItem="iHV-fe-q81" firstAttribute="centerX" secondItem="3nD-0a-aeX" secondAttribute="centerX" id="MGa-bd-GOV"/>
+                            <constraint firstItem="SGC-Hz-x3D" firstAttribute="top" secondItem="OSI-sc-2sF" secondAttribute="bottom" constant="20" id="SSS-3V-Gqk"/>
+                            <constraint firstItem="Ou5-yq-SXL" firstAttribute="centerX" secondItem="abz-rA-6H2" secondAttribute="centerX" id="T4v-mw-IyN"/>
+                            <constraint firstItem="Ou5-yq-SXL" firstAttribute="top" secondItem="abz-rA-6H2" secondAttribute="bottom" constant="37" id="TU1-ih-RzC"/>
+                            <constraint firstItem="abz-rA-6H2" firstAttribute="top" secondItem="SGC-Hz-x3D" secondAttribute="bottom" constant="19" id="UiA-IT-R4P"/>
+                            <constraint firstItem="OuI-9x-G8e" firstAttribute="trailing" secondItem="Fml-5c-4k6" secondAttribute="trailingMargin" id="Uta-oF-BZ0"/>
+                            <constraint firstItem="3nD-0a-aeX" firstAttribute="top" secondItem="Ou5-yq-SXL" secondAttribute="bottom" constant="8" id="aJr-IO-mOo"/>
+                            <constraint firstItem="3nD-0a-aeX" firstAttribute="centerX" secondItem="Ou5-yq-SXL" secondAttribute="centerX" id="atl-S0-Az6"/>
+                            <constraint firstItem="Ou5-yq-SXL" firstAttribute="top" secondItem="OuI-9x-G8e" secondAttribute="bottom" constant="8" id="d60-8a-tIC"/>
+                            <constraint firstItem="SGC-Hz-x3D" firstAttribute="centerX" secondItem="Fml-5c-4k6" secondAttribute="centerX" id="hQv-AV-yPG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="abz-rA-6H2" secondAttribute="trailing" constant="44" id="j9t-T7-GTz"/>
+                            <constraint firstItem="OSI-sc-2sF" firstAttribute="centerX" secondItem="SGC-Hz-x3D" secondAttribute="centerX" id="tzA-ZU-e1g"/>
+                            <constraint firstItem="OuI-9x-G8e" firstAttribute="leading" secondItem="Fml-5c-4k6" secondAttribute="leadingMargin" id="u65-Hr-gGX"/>
+                            <constraint firstItem="abz-rA-6H2" firstAttribute="leading" secondItem="Fml-5c-4k6" secondAttribute="leadingMargin" constant="44" id="vKU-CV-8VQ"/>
+                            <constraint firstItem="OuI-9x-G8e" firstAttribute="centerX" secondItem="Ou5-yq-SXL" secondAttribute="centerX" id="yWp-RJ-vyE"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="errorLabel" destination="OuI-9x-G8e" id="ZoY-f3-Zda"/>
+                        <outlet property="loginButton" destination="Ou5-yq-SXL" id="GvM-AX-42a"/>
+                        <outlet property="password" destination="abz-rA-6H2" id="IIu-RT-qXv"/>
+                        <outlet property="userName" destination="SGC-Hz-x3D" id="ubl-Pe-n2l"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wRb-Ig-PEz" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="704.79999999999995" y="78.710644677661179"/>
+        </scene>
         <!--Entertainment Options-->
         <scene sceneID="pQL-Nn-4Rd">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0v7-CO-DSJ" userLabel="Entertainment Options" customClass="EntertainmentOptionsViewController" customModule="CognitiveConcierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="0v7-CO-DSJ" userLabel="Entertainment Options" customClass="EntertainmentOptionsViewController" customModule="NearBY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BTF-hg-Xye"/>
                         <viewControllerLayoutGuide type="bottom" id="x3S-gg-cdC"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="bJQ-4z-hzZ" customClass="EntertainmentCollectionViewCell" customModule="CognitiveConcierge" customModuleProvider="target">
+                    <view key="view" contentMode="scaleToFill" id="bJQ-4z-hzZ" customClass="EntertainmentCollectionViewCell" customModule="NearBY" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
@@ -55,7 +175,7 @@
                                 <cells/>
                             </collectionView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WHAT CAN I HELP YOU FIND?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="tWP-B0-psV">
-                                <rect key="frame" x="89" y="112" width="198" height="18"/>
+                                <rect key="frame" x="88.5" y="112" width="198" height="18"/>
                                 <fontDescription key="fontDescription" name=".HelveticaNeueDeskInterface-Regular" family="SFNS Display" pointSize="15"/>
                                 <color key="textColor" red="0.082352941176470587" green="0.29411764705882354" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -78,7 +198,11 @@
                     </view>
                     <navigationItem key="navigationItem" title="Watson Recommendations" id="s2o-wX-EYo">
                         <barButtonItem key="leftBarButtonItem" image="avatar" id="y2i-iw-8ag"/>
-                        <barButtonItem key="rightBarButtonItem" image="moreIcon" id="GIz-y8-wN9"/>
+                        <barButtonItem key="rightBarButtonItem" image="moreIcon" id="GIz-y8-wN9">
+                            <connections>
+                                <segue destination="yC1-B8-4LT" kind="show" identifier="loginVCSS" id="3z1-J5-6dM"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
@@ -96,12 +220,12 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="301" y="762"/>
+            <point key="canvasLocation" x="334" y="771"/>
         </scene>
         <!--Messages View Controller-->
         <scene sceneID="1G5-d7-gCL">
             <objects>
-                <viewController id="Scm-a7-EvO" customClass="MessagesViewController" customModule="CognitiveConcierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Scm-a7-EvO" customClass="MessagesViewController" customModule="NearBY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Qu-7u-4cb"/>
                         <viewControllerLayoutGuide type="bottom" id="3Hc-XV-ciG"/>
@@ -158,7 +282,7 @@
         <!--Restaurants-->
         <scene sceneID="4id-1k-yQR">
             <objects>
-                <viewController id="OEw-Ac-A9I" customClass="RestaurantViewController" customModule="CognitiveConcierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OEw-Ac-A9I" customClass="RestaurantViewController" customModule="NearBY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkF-vD-6K4"/>
                         <viewControllerLayoutGuide type="bottom" id="HB0-qu-btb"/>
@@ -234,7 +358,7 @@
         <!--Restaurant Details-->
         <scene sceneID="8HT-VW-rwC">
             <objects>
-                <viewController id="tuK-f2-Hj9" customClass="RestaurantDetailViewController" customModule="CognitiveConcierge" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="tuK-f2-Hj9" customClass="RestaurantDetailViewController" customModule="NearBY" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gpX-QC-OUG"/>
                         <viewControllerLayoutGuide type="bottom" id="eTq-IY-ehs"/>
@@ -329,6 +453,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="MFP.png" width="68" height="79"/>
+        <image name="NearBY" width="426" height="700"/>
         <image name="avatar" width="37" height="37"/>
         <image name="moreIcon" width="16" height="4"/>
     </resources>
