@@ -23,6 +23,8 @@ class EntertainmentCollectionViewCell: UICollectionViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        //self.layer.cornerRadius = 5 //customize yourself
+        self.layer.masksToBounds = true
 
     }
     

@@ -55,9 +55,9 @@
 		</dict>
 	</dict>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>NeraMe want to access your location</string>
+	<string>NearBY want to access your location</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>NeraMe want to access your location</string>
+	<string>NearBY want to access your location</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>The application uses microphone data to populate the chat field during conversation.</string>
 	<key>UIAppFonts</key>

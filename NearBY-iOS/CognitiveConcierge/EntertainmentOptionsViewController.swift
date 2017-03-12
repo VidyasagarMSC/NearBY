@@ -35,12 +35,17 @@ class EntertainmentOptionsViewController: UIViewController {
     private var convoService: Conversation!
     private var workspaceID: String?
     
-    private let kNavigationBarTitle = "NearBY Recommendations"
+    var cellWidth:CGFloat = 0
+    var cellHeight:CGFloat = 0
+    var spacing:CGFloat = 12
+    var numberOfColumn:CGFloat = 2
+    
+    private let kNavigationBarTitle = "Recommendations"
     fileprivate let kCellCount = 3
-    private let kLabelText = "WHAT CAN I HELP YOU FIND?"
-    fileprivate let kRestaurantLabelText = "RESTAURANTS"
-    fileprivate let kVacationsLabelText = "SPAS"
-    fileprivate let kShowsLabelText = "CASINOS"
+    private let kLabelText = "I AM LOOKING FOR A NEARBY"
+    fileprivate let kRestaurantLabelText = "RESTAURANT"
+    fileprivate let kVacationsLabelText = "SPA"
+    fileprivate let kShowsLabelText = "CASINO"
     private let kConversationErrorCode = -6004
     private let kInternetErrorCode = -10049
 
@@ -70,6 +75,16 @@ class EntertainmentOptionsViewController: UIViewController {
         /// Assign Collection View dataSource and delegate to self UIViewController
         entertainmentCollectionView.dataSource = self
         self.entertainmentCollectionView.delegate = self
+        
+        entertainmentCollectionView.contentInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
+        
+        if let flowLayout = entertainmentCollectionView.collectionViewLayout as? UICollectionViewFlowLayout{
+            
+            cellWidth = (entertainmentCollectionView.frame.width  - (numberOfColumn + 1)*spacing)/numberOfColumn
+            cellHeight = 150 //yourCellHeight
+            flowLayout.minimumLineSpacing = spacing
+            flowLayout.minimumInteritemSpacing = spacing
+        }
 
         /// Identify which nib to use for the collectionView
         let nib = UINib(nibName: "EntertainmentCollectionViewCell", bundle: nil)
@@ -194,6 +209,8 @@ extension EntertainmentOptionsViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "entertainmentCell", for: indexPath) as! EntertainmentCollectionViewCell
         cell.entertainmentNameLabel.font = UIFont.boldSFNSDisplay(size: 12)
+        cell.entertainmentNameLabel.textAlignment = NSTextAlignment.center
+
 
         switch indexPath.item {
         case 0:
@@ -254,10 +271,10 @@ extension EntertainmentOptionsViewController: UICollectionViewDataSource {
 
 extension EntertainmentOptionsViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let cellWidth = collectionView.frame.size.width
+        /*let cellWidth = collectionView.frame.size.width / 2
 
         let cellSpacing = (collectionView.frame.size.height * (25/451))/2
-        let cellHeight = (collectionView.frame.size.height - (2 * cellSpacing))/3
+        let cellHeight = (collectionView.frame.size.height - (2 * cellSpacing))/3*/
 
         return CGSize(width: cellWidth, height: cellHeight)
     }

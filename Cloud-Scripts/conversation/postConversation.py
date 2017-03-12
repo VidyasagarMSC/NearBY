@@ -7,7 +7,7 @@ sys.path.append(sys.argv[1]+"/../")
 from plistGen import generatePlist
 
 #read cloud_config.json to parse credentials
-with open(sys.argv[1]+'/../../CognitiveConcierge-Server/cloud_config.json') as data_file:
+with open(sys.argv[1]+'/../../NearBY-Server/cloud_config.json') as data_file:
     cloudConfig = json.load(data_file)
 convCredentials = cloudConfig["vcap"]["services"]["conversation"][0]["credentials"]
 

@@ -37,7 +37,7 @@ class ProfileBarButtonItem: UIBarButtonItem {
     
     private func getProfileButton() -> UIButton {
         let profileButton = UIButton()
-        profileButton.setImage(UIImage(named: "avatar"), for: .normal)
+        profileButton.setImage(UIImage(named: "nearmelight"), for: .normal)
         //        profileButton.addTarget(self, action: #selector(ProfileBarButtonItem.goToProfile), forControlEvents: .TouchUpInside)
         profileButton.frame = CGRect(x: 14.5, y: 27, width: 30, height: 30)
         

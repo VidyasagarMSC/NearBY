@@ -4,7 +4,7 @@ import sys
 
 def generatePlist(workspaceID):
     #read cloud_config.json to parse credentials
-    with open(sys.argv[1]+'/../../CognitiveConcierge-Server/cloud_config.json') as data_file:
+    with open(sys.argv[1]+'/../../NearBY-Server/cloud_config.json') as data_file:
         cloudConfig = json.load(data_file)
 
     #get credentials from cloud_config.json
@@ -22,4 +22,4 @@ def generatePlist(workspaceID):
         SpeechToTextUsername = sttCredentials["username"],
         SpeechToTextPassword = sttCredentials["password"]
     )
-    plistlib.writePlist(p1, sys.argv[1]+'/../../CognitiveConcierge-iOS/CognitiveConcierge/CognitiveConcierge.plist')
+    plistlib.writePlist(p1, sys.argv[1]+'/../../NearBY-iOS/NearBY/NearBY.plist')

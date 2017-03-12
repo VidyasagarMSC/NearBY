@@ -150,7 +150,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
         self.locationManager.requestAlwaysAuthorization()
         
         // Start significant-change location updates
-        self.locationManager.startMonitoringSignificantLocationChanges()
+        //self.locationManager.startMonitoringSignificantLocationChanges()
+        self.locationManager.startUpdatingLocation()
     }
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -204,7 +205,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
-        self.locationManager.stopMonitoringSignificantLocationChanges()
+        //self.locationManager.stopMonitoringSignificantLocationChanges()
+        self.locationManager.stopUpdatingLocation()
         
     }
     func applicationDidEnterBackground(_ application: UIApplication) {

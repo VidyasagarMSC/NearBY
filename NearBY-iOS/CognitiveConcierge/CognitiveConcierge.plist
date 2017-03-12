@@ -13,13 +13,13 @@
 	<key>ConversationVersion</key>
 	<string>2016-12-23</string>
 	<key>TextToSpeechUsername</key>
-	<string>dbbe4f49-ceff-4e26-b99f-72a7dc15dab2</string>
+	<string>9a50095e-b6a7-4f05-80b0-3c5192f07e38</string>
 	<key>TextToSpeechPassword</key>
-	<string>XwjR2CpKdZZv</string>
+	<string>wH6GN5ZFHoYI</string>
 	<key>SpeechToTextUsername</key>
-	<string>b711649b-3a0d-4b37-b15b-3f500e1844ad</string>
+	<string>b9990109-e2f0-4cdd-b8f2-1f4a7fe44dc9</string>
 	<key>SpeechToTextPassword</key>
-	<string>AwLHA4vG1zpL</string>
+	<string>oyWnJnkm14dz</string>
 	<key>BluemixMobileAnalytics</key>
 	<string>5bc78043-759d-4e52-9355-861b406bdaef</string>
 </dict>

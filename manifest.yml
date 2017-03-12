@@ -1,21 +1,18 @@
 ---
 declared-services:
-  CognitiveConcierge-Conversation:
+  NearBY-Conversation:
     label: conversation
     plan: free
-  CognitiveConcierge-Speech-To-Text:
+  NearBY-Speech-To-Text:
     label: speech_to_text
     plan: standard
-  CognitiveConcierge-Text-To-Speech:
+  NearBY-Text-To-Speech:
     label: text_to_speech
     plan: standard
-  CognitiveConcierge-Alchemy:
-    label: alchemy_api
-    plan: free
 applications:
-- name: CognitiveConcierge-IC17
-  host: CognitiveConcierge-IC17
-  path: ./CognitiveConcierge-Server
+- name: NearBY-IC17
+  host: NearBY-IC17
+  path: ./NearBY-Server
   random-route: true
   command: restaurant-recommendations -bind 0.0.0.0:$PORT
   memory: 512M
@@ -23,6 +20,6 @@ applications:
   instances: 1
   buildpack: swift_buildpack
   services:
-  - CognitiveConcierge-Conversation
-  - CognitiveConcierge-Speech-To-Text
-  - CognitiveConcierge-Text-To-Speech
+  - NearBY-Conversation
+  - NearBY-Speech-To-Text
+  - NearBY-Text-To-Speech

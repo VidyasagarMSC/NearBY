@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "OBJ_334"
-               BuildableName = "restaurant-recommendations"
+               BuildableName = "NearBY-Server"
                BlueprintName = "NearBY-Server"
                ReferencedContainer = "container:NearBY-Server.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "OBJ_334"
-            BuildableName = "restaurant-recommendations"
+            BuildableName = "NearBY-Server"
             BlueprintName = "NearBY-Server"
             ReferencedContainer = "container:NearBY-Server.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "OBJ_334"
-            BuildableName = "restaurant-recommendations"
+            BuildableName = "NearBY-Server"
             BlueprintName = "NearBY-Server"
             ReferencedContainer = "container:NearBY-Server.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "OBJ_334"
-            BuildableName = "restaurant-recommendations"
+            BuildableName = "NearBY-Server"
             BlueprintName = "NearBY-Server"
             ReferencedContainer = "container:NearBY-Server.xcodeproj">
          </BuildableReference>
