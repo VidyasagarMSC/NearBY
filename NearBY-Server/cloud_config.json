@@ -16,7 +16,7 @@
           },
           "plan" : "standard",
           "label" : "text_to_speech",
-          "name" : "CognitiveConcierge-Text-To-Speech",
+          "name" : "NearBY-Text-To-Speech",
           "syslog_drain_url" : null
         }
       ],
@@ -35,7 +35,7 @@
           },
           "plan" : "standard",
           "label" : "speech_to_text",
-          "name" : "CognitiveConcierge-Speech-To-Text",
+          "name" : "NearBY-Speech-To-Text",
           "syslog_drain_url" : null
         }
       ],
@@ -54,26 +54,41 @@
           },
           "plan" : "free",
           "label" : "conversation",
-          "name" : "CognitiveConcierge-Conversation",
+          "name" : "NearBY-Conversation",
           "syslog_drain_url" : null
         }
       ],
-      "alchemy_api" : [
+      "mobile_analytics" : [
         {
           "tags" : [
-            "watson",
+            "mobile",
             "ibm_created",
             "ibm_dedicated_public"
           ],
           "provider" : null,
           "credentials" : {
-            "url" : "https://gateway-a.watsonplatform.net/calls",
-            "apikey" : "c401b35b7659a0e21e8e52770b90c75d4a575418",
-            "note" : "It may take up to 5 minutes for this key to become active"
+          
           },
-          "plan" : "free",
-          "label" : "alchemy_api",
-          "name" : "CognitiveConcierge-Alchemy",
+          "plan" : "basic",
+          "label" : "mobile_analytics",
+          "name" : "NearBY-Mobile-Analytics",
+          "syslog_drain_url" : null
+        }
+      ],
+      "push_notifications" : [
+        {
+          "tags" : [
+            "mobile",
+            "ibm_created",
+            "ibm_dedicated_public"
+          ],
+          "provider" : null,
+          "credentials" : {
+          
+          },
+          "plan" : "basic",
+          "label" : "push_notifications",
+          "name" : "NearBY-Push-Notifications",
           "syslog_drain_url" : null
         }
       ]

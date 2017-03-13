@@ -11,10 +11,10 @@ declared-services:
     plan: standard
   NearBY-Mobile-Analytics:
     label: mobile_analytics
-    plan: standard
+    plan: basic
   NearBY-Push-Notifications:
     label: push_notifications
-    plan: standard
+    plan: basic
 applications:
 - name: NearBY-IC17
   host: NearBY-IC17
