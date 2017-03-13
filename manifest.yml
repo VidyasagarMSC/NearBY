@@ -11,7 +11,7 @@ declared-services:
     plan: standard
   NearBY-Mobile-Analytics:
     label: mobile-analytics_Prod
-    plan: lite
+    plan: basic
   NearBY-Push-Notifications:
     label: imfpush
     plan: Basic
