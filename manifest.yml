@@ -12,9 +12,6 @@ declared-services:
   NearBY-Mobile-Analytics:
     label: mobile_analytics
     plan: basic
-  NearBY-Push-Notifications:
-    label: push_notifications
-    plan: basic
 applications:
 - name: NearBY-IC17
   host: NearBY-IC17
@@ -30,4 +27,3 @@ applications:
   - NearBY-Speech-To-Text
   - NearBY-Text-To-Speech
   - NearBY-Mobile-Analytics
-  - NearBY-Push-Notifications
