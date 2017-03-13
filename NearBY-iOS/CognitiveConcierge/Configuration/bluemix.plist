@@ -5,7 +5,7 @@
 	<key>appRouteLocal</key>
 	<string>http://localhost:8090</string>
 	<key>appRouteRemote</key>
-	<string>https://cognitiveconcierge-ic17.mybluemix.net</string>
+	<string>https://nearbytest.mybluemix.net</string>
 	<key>bluemixAppGUID</key>
 	<string>appGuid</string>
 	<key>bluemixAppRegion</key>
