@@ -14,7 +14,7 @@ declared-services:
     plan: standard
   NearBY-Push-Notifications:
     label: push_notifications
-    plan: basic
+    plan: standard
 applications:
 - name: NearBY-IC17
   host: NearBY-IC17
