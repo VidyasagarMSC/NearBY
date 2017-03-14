@@ -3,23 +3,23 @@
 <plist version="1.0">
 <dict>
 	<key>googlePlacesAPIKey</key>
-	<string>AIzaSyBW-zo8vT6Lbj8QF1m8D-Ytri5hNuxPKQw</string>
+	<string></string>
 	<key>ConversationWorkspaceID</key>
-	<string>4310887b-8d48-42dd-b059-7df90bdc619a</string>
+	<string></string>
 	<key>ConversationUsername</key>
-	<string>5476015f-08fb-4cde-b0a8-6d840189d1c4</string>
+	<string></string>
 	<key>ConversationPassword</key>
-	<string>xadtyZpDQJbK</string>
+	<string></string>
 	<key>ConversationVersion</key>
 	<string>2016-12-23</string>
 	<key>TextToSpeechUsername</key>
-	<string>9a50095e-b6a7-4f05-80b0-3c5192f07e38</string>
+	<string></string>
 	<key>TextToSpeechPassword</key>
-	<string>wH6GN5ZFHoYI</string>
+	<string></string>
 	<key>SpeechToTextUsername</key>
-	<string>b9990109-e2f0-4cdd-b8f2-1f4a7fe44dc9</string>
+	<string></string>
 	<key>SpeechToTextPassword</key>
-	<string>oyWnJnkm14dz</string>
+	<string></string>
 	<key>BluemixMobileAnalytics</key>
 	<string>5bc78043-759d-4e52-9355-861b406bdaef</string>
 </dict>
