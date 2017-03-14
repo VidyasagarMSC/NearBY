@@ -26,14 +26,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, CLLocationManagerDelegate
     
     var window: UIWindow?
     
-    var pushAppGUID:String = "2913bfe5-a3fc-4401-93ba-0fada156dda0"
-    var pushAppClientSecret:String = "afab35fd-d588-4fd5-8ba7-786b61844629"
-    var pushAppSecret:String = "afab35fd-d588-4fd5-8ba7-786b61844629"
-    var pushAppRegion:String = ".ng.bluemix.net"
-    var whiskAccessKey:String = "9908ebc9-7385-4460-b5d9-eb88541a76e3"
-    var whiskaccessToken:String = "DkNWqzA6e1c6of2pLTZdjE5EShRgheXtbfx0hQWjZfhXWnDCCfdqFuP1R7z9k9fb"
-    var whiskActionName:String = "SendLocationUpdate"
-    var whiskSpaceName:String = "IMF_Push_kgspace"
+    var pushAppGUID:String = ""
+    var pushAppClientSecret:String = ""
+    var pushAppSecret:String = ""
+    var pushAppRegion:String = ""
+    var whiskAccessKey:String = ""
+    var whiskaccessToken:String = ""
+    var whiskActionName:String = ""
+    var whiskSpaceName:String = ""
     
     var locationManager = CLLocationManager()
 
