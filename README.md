@@ -4,9 +4,9 @@ NearBY is inspired from [CognitiveConcierge](https://github.com/IBM-MIL/Cognitiv
 CognitiveConcierge is an end-to-end Swift application sample with an iOS front end and a Kitura web framework back end.  
 
 
-<p align="center"><img src="images/splash.png" width="200"/>
-<img src="images/main.png" width="200"/>
-<img src="images/chat.png" width="200"/>
+<p align="center"><img style="border-style: solid;" src="images/splash.png" width="200"/>
+<img style="border-style: solid;" src="images/main.png" width="200"/>
+<img style="border-style: solid;" src="images/chat.png" width="200"/>
 </p>
 
 ## Enhancements 
