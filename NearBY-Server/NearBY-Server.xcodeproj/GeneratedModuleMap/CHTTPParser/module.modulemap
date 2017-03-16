@@ -1,5 +1,0 @@
-module CHTTPParser {
-    umbrella "/Users/VMac/Documents/VMAC/Code/GIT/CognitiveConcierge/CognitiveConcierge-Server/Packages/CHTTPParser-0.3.0/Sources/CHTTPParser/include"
-    link "CHTTPParser"
-    export *
-}
