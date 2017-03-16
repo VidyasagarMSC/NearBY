@@ -5,7 +5,7 @@ CognitiveConcierge is an end-to-end Swift application sample with an iOS front e
 
 
 <p align="center"><img style="border-style: solid;" src="images/splash.png" width="200"/>
-<img style="border-style: solid;" src="images/main.png" width="200"/>
+<img style="border-style: solid;" src="images/Main.png" width="200"/>
 <img style="border-style: solid;" src="images/chat.png" width="200"/>
 </p>
 
