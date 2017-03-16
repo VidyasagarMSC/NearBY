@@ -11,6 +11,6 @@
 	<key>bluemixAppRegion</key>
 	<string>appRegion</string>
 	<key>isLocal</key>
-	<false/>
+	<true/>
 </dict>
 </plist>
